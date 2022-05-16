@@ -1,4 +1,3 @@
-import app
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -24,7 +23,7 @@ scaler = StandardScaler()
 features_train_scaled = scaler.fit_transform(features_train)
 features_test_scaled = scaler.transform(features_test)
 
-# hyperparameters
+# hyperparams
 batch = 40
 learning_rate = 0.01
 num_epochs = 200
@@ -52,11 +51,6 @@ def design_model_dropout(X, learning_rate):
 
 history = fit_model(design_model_dropout(features_train, learning_rate), features_train, labels_train, learning_rate, num_epochs)
 
-# Do extensions code below
-
-
-
-# if you decide to do the Matplotlib extension, you must save your plot in the directory by uncommenting the line of code below
 fig = plt.figure()
 ax1 = fig.add_subplot(2, 1, 1)
 ax1.plot(history.history['mae'])
